@@ -1,0 +1,213 @@
+
+#menu {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#menu .menu-section {
+	box-sizing: border-box;
+	margin: 0 0 20px 0;
+	padding: 0;
+	width: 100%;
+	border: 5px solid black;
+}
+
+#menu .menu-section:not(.open) {
+	border-bottom: none;
+}
+
+#menu .menu-section .menu-section-title {
+	line-height: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	border-bottom: 5px solid black;
+	color: #1c7e0a;
+}
+
+.menu-section-title .arrow {
+	background-image: url('images/arrows.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 100% 50%;
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	width: 25%;
+	transition: transform 0.5s;
+	transform: scaleY(-1);
+}
+
+.menu-section-title .arrow.open {
+	transform: scaleY(1);
+}
+
+.menu-section:not(.open) .menu-section-container {
+	display: none;
+}
+		
+.menu-section.open .menu-section-container {
+	display: block;
+}
+
+.top-menu-section-container, .sub-menu-section {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.sub-menu-section-title {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 5px 0;
+	text-align: center;
+	font-size: 1.25em;
+	position: relative;
+	z-index: 99;
+}
+
+.menu-section-container .menu-item:first-child {
+	margin-top: 10px;
+}
+
+.menu-section-container .menu-item {
+	position: relative;
+	margin: 0 10px 10px 10px;
+	z-index: 99;
+	width: 50%;
+}
+
+.menu-section-container .menu-item-name {
+	padding-right: 25%;
+}
+
+.menu-section-container .menu-item-price {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.menu-section-container .menu-item-desc {
+	font-style: italic;
+	font-size: 0.75em;
+}
+
+.menu-section-container .menu-item-extras {
+	position: relative;
+	margin-left: 5%;
+}
+
+.menu-section-container .menu-item-extra {
+	position: relative;
+}
+
+.menu-section-container .menu-item-extra .item-extra-desc {
+	padding-right: 25%;
+}
+
+.menu-section-container .menu-item-extra .item-extra-price {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.menu-section-container .section-image-container { 
+	z-index: 97;
+	width: 35%;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: 2% 5%;
+}
+
+.menu-section-container .section-image-container .positioner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+.menu-section-container .section-image-container .section-image:not(.cut):before {
+	padding-top: 100%;
+    display: block;
+    content: '';
+}
+
+.menu-section-container .section-image-container .section-image {
+	width: calc(100% - 5px);
+	background-size: cover;
+    background-repeat: no-repeat;
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+	box-shadow: 3px 3px 3px 0px black;
+}
+
+.menu-section-container .section-image-container .section-image.cut {
+	height: calc(100% - 5px);
+	top: 0;
+	transform: none;
+}
+
+
+@media screen and (max-width: 780px) {
+	.top-menu-section-container, .sub-menu-section {
+		position: relative;
+	}
+
+	.menu-section-container .menu-item {
+		width: calc(100% - 20px);
+	}
+	
+	.menu-section-container .section-image-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
+	
+	.menu-section-container .section-image-container .section-image,
+	section-container .section-image-container .section-image.cut	{
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		transform: none;
+		top: 0;
+		
+		box-shadow: none;
+	}
+	
+	.menu-section-container .section-image-container .section-image:after {
+		content: " ";
+		background-color: rgba(222, 177, 135, 0.75);
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: block;
+	}
+	
+	.menu-section-container .section-image-container:after {
+		content: " ";
+		background-color: rgba(255, 255, 255, 0.40);
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: block;
+	}
+}

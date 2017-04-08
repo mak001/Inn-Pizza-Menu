@@ -1,0 +1,21 @@
+div.form-group label {
+	display: block;
+	font-weight: 600;
+	font-size: 13px;
+    line-height: 1.5;
+	margin: 1em 0;
+}
+
+div.form-group textarea {
+	width: 100%;
+	height: 6em;
+}
+
+.term-show-option {
+	padding: 2px 0;
+}
+
+.term-show-option label {
+	display: inline-block;
+}
+
